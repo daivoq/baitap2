@@ -1,0 +1,136 @@
+{
+	"info": {
+		"_postman_id": "cfa2feb3-d49a-4552-98db-1a81320ebea3",
+		"name": "baitap2",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "28078036"
+	},
+	"item": [
+		{
+			"name": "lấy danh sách like theo user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{domain}}/api/user/like/1"
+			},
+			"response": []
+		},
+		{
+			"name": "lấy danh sách đánh giá theo user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{domain}}/api/user/rate/1"
+			},
+			"response": []
+		},
+		{
+			"name": "lấy danh sách like theo nhà hàng",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{domain}}/api/res/like/1"
+			},
+			"response": []
+		},
+		{
+			"name": "lấy danh sách đánh giá theo nhà hàng",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "{{domain}}/api/res/rate/3"
+			},
+			"response": []
+		},
+		{
+			"name": "like",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\":5,\r\n    \"res_id\":3\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{domain}}/api/like/addlike"
+			},
+			"response": []
+		},
+		{
+			"name": "unlike",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "{{domain}}/api/like/unlike/5/3"
+			},
+			"response": []
+		},
+		{
+			"name": "thêm đánh giá",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\":5,\r\n    \"res_id\":2,\r\n    \"amount\":4\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{domain}}/api/rate"
+			},
+			"response": []
+		},
+		{
+			"name": "thêm order",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"user_id\":1,\r\n    \"food_id\":3,\r\n    \"amount\":5,\r\n    \"code\":\"abcxyz123\",\r\n    \"arr_sub_id\":\"[2,3]\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "{{domain}}/api/order"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "domain",
+			"value": "localhost:8080",
+			"type": "string"
+		}
+	]
+}
